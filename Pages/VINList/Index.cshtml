@@ -1,0 +1,42 @@
+﻿@page
+@model Newmar.Pages.VINList.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>VIN List Import</h1>
+
+<p>
+    <a asp-page="Create">Create New VIN</a>
+</p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VIN[0].VNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.VIN) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

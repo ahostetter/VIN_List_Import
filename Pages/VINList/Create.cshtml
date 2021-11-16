@@ -1,0 +1,28 @@
+﻿@page
+@model Newmar.Pages.VINList.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>VIN</h4>
+<hr />    
+
+<form enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label class="file">
+            <input type="file" asp-for="VINFile" multiple aria-label="File browser example">
+            <span class="file-custom"></span>
+        </label>
+        <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
+    </div>  
+</form>
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
