@@ -15,5 +15,7 @@ namespace Newmar.Data
         }
 
         public DbSet<Newmar.Models.VIN> VIN { get; set; }
+
+        public DbSet<Newmar.Models.Inventory> Inventory { get; set; }
     }
 }
