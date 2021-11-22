@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Newmar.Pages
 {
+    [Authorize(Roles = @"AdamsDesktop\achos")]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
@@ -18,3 +20,9 @@ namespace Newmar.Pages
         }
     }
 }
+
+// Can use this in HTML to display only if authorized
+//@if(User.Identity.IsAuthenticated)
+//{
+//
+//}
