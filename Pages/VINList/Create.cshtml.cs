@@ -64,30 +64,5 @@ namespace Newmar.Pages.VINList
             }
             return RedirectToPage("./Index");
         }
-        
-        //public async Task<IActionResult> UploadFile(IFormFile VINFile)
-        //{
-        //    string csDestination = "Server=localhost;Database=newmar;Trusted_Connection=True;MultipleActiveResultSets=true";
-        //
-        //    using (var stream = VINFile.OpenReadStream())
-        //    using (var tx = new StreamReader(stream))
-        //    using (var reader = new CsvReader((IParser)tx))
-        //    using (var rd = new CsvDataReader(reader))
-        //    {
-        //        var headers = reader.HeaderRecord;
-        //
-        //        var bcp = new SqlBulkCopy(csDestination)
-        //        {
-        //            DestinationTableName = "VIN"
-        //        };
-        //        //Assume the file headers and table fields have the same names
-        //        foreach (var header in headers)
-        //        {
-        //            bcp.ColumnMappings.Add(header, header);
-        //        }
-        //        await bcp.WriteToServerAsync(rd);
-        //    }
-        //    return RedirectToPage("./Index");
-        //}
     }
 }

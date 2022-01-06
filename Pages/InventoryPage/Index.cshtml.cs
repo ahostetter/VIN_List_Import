@@ -11,7 +11,7 @@ using Newmar.Models;
 
 namespace Newmar.Pages.InventoryPage
 {
-    [Authorize(Roles = @"AdamsDesktop\\achos")]
+    [Authorize(Roles = @"AdamsDesktop\achos")]
     public class IndexModel : PageModel
     {
         private readonly Newmar.Data.NewmarContext _context;
