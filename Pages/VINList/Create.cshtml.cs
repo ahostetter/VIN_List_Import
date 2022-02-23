@@ -48,12 +48,11 @@ namespace Newmar.Pages.VINList
                     HeaderValidated = null,
                     MissingFieldFound = null,
                 };
-
+                //Opens VINFile and reads the file to a variable that CSVReader can use
                 using var stream = VINFile.OpenReadStream();
                 using var reader = new StreamReader(stream);
                 using var csv = new CsvReader(reader, config);
-                csv.Read();
-                csv.ReadHeader();
+
                 // Gets single record and commits the record to the database. Keeps reading records until reaches the last record.
                 while (csv.Read())
                 {

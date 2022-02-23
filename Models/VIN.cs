@@ -12,6 +12,5 @@ namespace Newmar.Models
         [Name("VNumber")]
         [Display(Name = "VIN")]
         public string? VNumber { get; set; }
-
     }
 }

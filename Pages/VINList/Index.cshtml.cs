@@ -30,6 +30,7 @@ namespace Newmar.Pages.VINList
         [BindProperty(SupportsGet = true)]
         public string VINCode { get; set; }
 
+        //Creates a filter for the VIN Numbers for searching
         public async Task OnGetAsync()
         {
             var vins = from m in _context.VIN
@@ -41,10 +42,5 @@ namespace Newmar.Pages.VINList
 
             VIN = await vins.ToListAsync();
         }
-
-        //public async Task OnGetAsync()
-        //{
-        //    VIN = await _context.VIN.ToListAsync();
-        //}
     }
 }
